@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tóm tắt bài viết với Gemini</title>
+</head>
+<body>
+    <h1>Tóm tắt bài viết với Gemini</h1>
+    <form method="post">
+        <label for="url">Nhập URL trang web:</label><br>
+        <input type="text" id="url" name="url" required><br><br>
+        <label for="keyword">Từ khóa tiêu đề bài viết:</label><br>
+        <input type="text" id="keyword" name="keyword" required><br><br>
+        <input type="submit" value="Tóm tắt bài viết">
+    </form>
+    {% if summary %}
+        <h2>Kết quả tóm tắt:</h2>
+        <div>{{ summary|safe }}</div>
+    {% endif %}
+</body>
+</html>
