@@ -14,6 +14,9 @@ def get_article_summary(url, keyword):
         soup = BeautifulSoup(page.text, "html.parser")
         links = soup.find_all("a", string=lambda t: t and keyword.lower() in t.lower())
 
+        for link in links:
+            print("LINK FOUND:", link.get_text())
+
         if not links:
             return "Không tìm thấy bài viết với từ khóa đó."
 
